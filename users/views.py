@@ -3,6 +3,7 @@ from django.contrib.auth.forms import UserCreationForm, User
 from django.contrib import messages
 from .forms import UserRegisterForm, UserUpdateForm,ProfileUpdateForm
 from django.contrib.auth.decorators import login_required
+from django.core.files.storage import FileSystemStorage
 
 import time
 
@@ -41,4 +42,18 @@ def profile(request):
         'p_form': p_form
     }
     return render(request, 'users/profile.html', context)
+
+
+def upload(request):
+    context = {}
+    if request.method == 'POST':
+        uploaded_file = request.FILES['document']
+        fs = FileSystemStorage()
+        print(uploaded_file.name)
+        print(uploaded_file.size)
+        name = fs.save(uploaded_file.name, uploaded_file)
+        context['url'] = fs.url(name)
+    return render(request, 'users/upload.html', context)
+
+
 

@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django.core.files.storage import FileSystemStorage
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.views.generic import (
     ListView,
@@ -31,7 +32,6 @@ def about(request):
 
 
 
-def upload(request):
-    return render(request, 'web/upload.html', {'title': 'Upload'})
+
 
 
