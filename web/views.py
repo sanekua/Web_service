@@ -1,5 +1,12 @@
 from django.shortcuts import render
-import time
+from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
+from django.views.generic import (
+    ListView,
+    DetailView,
+    CreateView,
+    UpdateView,
+    DeleteView
+)
 from .models import Post
 
 
@@ -21,4 +28,10 @@ def home(request):
 
 def about(request):
     return render(request, 'web/about.html', {'title': 'About'})
+
+
+
+def upload(request):
+    return render(request, 'web/upload.html', {'title': 'Upload'})
+
 
