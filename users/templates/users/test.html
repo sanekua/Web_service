@@ -46,7 +46,7 @@
 
 <!--			function countdown(){-->
 <!--				var now = new Date();-->
-<!--				var eventDate = new Date(2018, 11, 25);-->
+<!--				var eventDate = new Date(2019, 05, 26);-->
 
 <!--				var currentTiime = now.getTime();-->
 <!--				var eventTime = eventDate.getTime();-->
@@ -82,5 +82,11 @@
 <!--</html>-->
 
 
-Prints something like:  Aug. 27, 2017, 2:57 p.m.
-{{ myDate|date:'Y-m-d H:i' }}
+<head>
+  {% load static %}
+  <script src="{% static 'test.js' %}"></script>
+  <title>Site</title>
+</head>
+<body>
+    <div>Registration closes in <span id="time">05:00</span> minutes!</div>
+</body>

@@ -7,12 +7,12 @@ from .models import Profile
 
 class UserRegisterForm(UserCreationForm):
     email = forms.EmailField()
-    living = forms.IntegerField(max_value=100)
+    #living = forms.IntegerField(max_value=100)
 
 
     class Meta:
         model = User
-        fields = ['username','email','living','password1','password2']
+        fields = ['username','email','password1','password2']
 
 
 class UserUpdateForm(forms.ModelForm):
@@ -30,3 +30,10 @@ class ProfileUpdateForm(forms.ModelForm):
     class Meta:
         model = Profile
         fields = ['image']
+
+
+class FilesUpdateForm(forms.ModelForm):
+
+    class Meta:
+        model = Profile
+        fields = ['files']
