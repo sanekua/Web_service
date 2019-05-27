@@ -9,7 +9,7 @@ git clone https://github.com/sanekua/Web_service.git
 ```
 Install the requirements:
 ```
-git pip install -r requirements.txt
+pip install -r requirements.txt
 ```
 ## Usage
 Apply the migrations:
