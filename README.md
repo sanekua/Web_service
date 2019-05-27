@@ -20,3 +20,14 @@ Finally, run the development server:
 ```
 python manage.py runserver
 ```
+After login you can create your own post, add files and profile image.
+
+User can see only own post 
+
+
+
+`` Admin page :``
+
+`login ` Alex_admin
+
+`password` Jove248/fail  
