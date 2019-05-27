@@ -51,16 +51,5 @@ def profile(request):
     return render(request, 'users/profile.html', context)
 
 
-def upload(request):
-    context = {}
-    if request.method == 'POST':
-        uploaded_file = request.FILES['document']
-        fs = FileSystemStorage()
-        print(uploaded_file.name)
-        print(uploaded_file.size)
-        name = fs.save(uploaded_file.name, uploaded_file)
-        context['url'] = fs.url(name)
-    return render(request, 'users/upload.html', context)
-
 
 
