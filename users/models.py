@@ -21,3 +21,16 @@ class Profile(models.Model):
     #         output_size = (300, 300)
     #         img.thumbnail(output_size)
     #         img.save(self.image.path)
+
+
+
+
+
+
+# class Prof(models.Model):
+#     user = models.OneToOneField(User,on_delete=models.CASCADE)
+#     #image = models.ImageField(default='default.png', upload_to='profile_pict')
+#     files = models.FileField(default='default.txt', upload_to='pdf')
+#
+#     def __str__(self):
+#         return f'{self.user.username}Prof'

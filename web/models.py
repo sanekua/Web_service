@@ -11,7 +11,7 @@ class Post(models.Model):
     date_posted = models.DateTimeField(default=timezone.now)
     author = models.ForeignKey(User, on_delete=models.CASCADE)
     living_time = models.IntegerField(default=200)
-    files = models.FileField(upload_to='files', default='default.txt')
+    files = models.FileField(upload_to='books/pdfs/')
 
 
 

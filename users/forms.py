@@ -1,13 +1,12 @@
 from django import forms
 from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm
-from .models import Profile
+from .models import Profile#, Prof
 
 
 
 class UserRegisterForm(UserCreationForm):
     email = forms.EmailField()
-    #living = forms.IntegerField(max_value=100)
 
 
     class Meta:
@@ -37,3 +36,11 @@ class FilesUpdateForm(forms.ModelForm):
     class Meta:
         model = Profile
         fields = ['files']
+
+
+#
+# class FilesUpdateForm1(forms.ModelForm):
+#
+#     class Meta:
+#         model = Prof
+#         fields = ['files']

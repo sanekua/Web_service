@@ -4,6 +4,7 @@ from django.core.files.storage import FileSystemStorage
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
 from .models import Post
+from django.db import models
 
 
 def home(request):
@@ -35,15 +36,17 @@ class PostDetailView(DetailView):
 
 class PostCreateView(LoginRequiredMixin, CreateView):
     model = Post
-    fields = ['title', 'content','files','living_time']
-
+    #filess = models.FileField(default='default.txt', upload_to='pdf')
+    fields = ['title', 'content','files'] #'files' ,'living_time' in list
     def form_valid(self, form):
+        # if form.is_valid():
+        #     form.save()
         form.instance.author = self.request.user
         return super().form_valid(form)
 
 class PostUpdateView(LoginRequiredMixin,UserPassesTestMixin, UpdateView):
     model = Post
-    fields = ['title', 'content','files','living_time']
+    fields = ['title', 'content','files'] #,'files','living_time'
 
     def form_valid(self, form):
         form.instance.author = self.request.user
