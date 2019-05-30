@@ -1,13 +1,12 @@
 from django import forms
 from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm
-from .models import Profile#, Prof
+from .models import Profile
 
 
 
 class UserRegisterForm(UserCreationForm):
     email = forms.EmailField()
-
 
     class Meta:
         model = User
@@ -44,3 +43,10 @@ class FilesUpdateForm(forms.ModelForm):
 #     class Meta:
 #         model = Prof
 #         fields = ['files']
+from .models import Book
+
+
+class BookForm(forms.ModelForm):
+    class Meta:
+        model = Book
+        fields = ('title', 'author', 'pdf', 'cover')
