@@ -26,8 +26,3 @@ User can see only own post
 
 
 
-`` Admin page :``
-
-`login ` Alex_admin
-
-`password` Jove248/fail  
