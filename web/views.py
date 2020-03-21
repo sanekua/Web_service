@@ -36,7 +36,6 @@ class PostDetailView(DetailView):
 
 class PostCreateView(LoginRequiredMixin, CreateView):
     model = Post
-    #filess = models.FileField(default='default.txt', upload_to='pdf')
     fields = ['title', 'content'] #'files' ,'living_time' in list
     def form_valid(self, form):
         # if form.is_valid():

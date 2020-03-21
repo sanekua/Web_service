@@ -37,12 +37,6 @@ class FilesUpdateForm(forms.ModelForm):
         fields = ['files']
 
 
-#
-# class FilesUpdateForm1(forms.ModelForm):
-#
-#     class Meta:
-#         model = Prof
-#         fields = ['files']
 from .models import Book
 
 
